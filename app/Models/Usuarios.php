@@ -11,6 +11,10 @@ class Usuarios extends Model
     use HasFactory;
     use SoftDeletes;
     protected $fillable = [
-        ''
+        'nombre',
+        'foto',
+        'estado',
+        'created_by',
+        'updated_by'
     ];
 }
