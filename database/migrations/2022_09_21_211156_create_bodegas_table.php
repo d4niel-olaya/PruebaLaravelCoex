@@ -15,7 +15,10 @@ class CreateBodegasTable extends Migration
     {
         Schema::create('bodegas', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre', 30);
+            $table->foreignId('id_responsable')->constrained('usuarios');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

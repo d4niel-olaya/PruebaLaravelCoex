@@ -13,9 +13,16 @@ class CreateHistorialesTable extends Migration
      */
     public function up()
     {
-        Schema::create('historiaes', function (Blueprint $table) {
+        Schema::create('historiales', function (Blueprint $table) {
             $table->id();
+            $table->unsignedInteger('cantidad');
+            $table->foreignId('id_bodega_origen')->constrained('bodegas');
+            $table->foreignId('id_bodega_destino')->constrained('bodegas');
+            $table->foreignId('id_inventario')->constrained('inventarios');
+            $table->unsignedInteger('created_by')->nullable();
+            $table->unsignedInteger('updated_by')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
