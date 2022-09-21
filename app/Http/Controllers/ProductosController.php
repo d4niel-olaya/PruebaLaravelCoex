@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Productos;
 use Illuminate\Http\Request;
 use Exception;
+use Illuminate\Support\Facades\DB;
 
 class ProductosController extends Controller
 {
     //
     public function index(){
-        $productos = Productos::all();
+        $productos = Productos::paginate(5);
         return $productos;
     }
 

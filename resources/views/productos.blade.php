@@ -10,11 +10,15 @@
 </head>
 <body>
     <h2>Productos</h2>  
+
     <ul>
         @foreach ($productos as $producto)
             <li>{{$producto['nombre']}}</li>
         @endforeach
     </ul>
+    <div class="d-flex justify-content-end">
+        {{$productos->links()}}
+    </div>
     <h1>Crear Producto</h1>
     <form action="{{route('crearProduct')}}" method="POST">
         @csrf
