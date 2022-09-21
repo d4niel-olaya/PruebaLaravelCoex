@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductosController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuariosController;
 
@@ -27,5 +28,11 @@ Route::controller(UsuariosController::class)->group(function(){
 });
 
 
+Route::controller(ProductosController::class)->group(function(){
+    Route::get('/productos', 'show');
+    Route::post('create', 'store')->name('crearProduct');
+    Route::put('update', 'updateProduct')->name('editProduct');
+    Route::delete('deleted', 'deletedProduct')->name('delProduct');
+});
 
 
