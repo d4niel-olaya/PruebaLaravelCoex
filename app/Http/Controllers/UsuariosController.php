@@ -68,12 +68,11 @@ class UsuariosController extends Controller
     public function deletedUser(Request $request){
         try{
             $request -> validate([
-                'name'=>'required',
+                'nombre'=>'required',
             ]);
-            $name = $request -> NewName;
-            $id = Usuarios::where('nombre', $name)
-            ->select('id')->get();
-            Usuarios::where('id', $id)
+            $name = $request ->nombre;
+  
+            Usuarios::where('nombre', $name)
             ->delete();
             return redirect('/inicio');
         }

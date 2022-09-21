@@ -32,6 +32,7 @@
     <h1>Usuarios</h1>
     <ul>
         @foreach ($usuarios as $usuario)
+            <li>{{$usuario['id']}}</li>
             <li>{{$usuario['nombre']}}</li>
         @endforeach
     </ul>
@@ -60,7 +61,7 @@
         @csrf
         @method('delete')
         <label for="">Nombre</label>
-        <input type="text" name="name">
+        <input type="text" name="nombre">
         <br>
         <button class="btn btn-primary">Borrar</button>
     </form>
