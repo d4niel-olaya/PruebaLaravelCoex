@@ -15,6 +15,7 @@ class InventariosFactory extends Factory
     {
         return [
             //
+            ''
         ];
     }
 }

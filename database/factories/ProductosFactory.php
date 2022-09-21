@@ -15,6 +15,12 @@ class ProductosFactory extends Factory
     {
         return [
             //
+            'nombre'=> $this -> faker ->word(),
+            'descripcion'=>$this -> faker -> paragraph(),
+            'estado'=>$this -> faker -> boolean(),
+            'created_by'=>$this -> faker-> randomElement([1,2,34]),
+            'updated_by'=>$this -> faker-> randomElement([1,2,34]),
+
         ];
     }
 }
